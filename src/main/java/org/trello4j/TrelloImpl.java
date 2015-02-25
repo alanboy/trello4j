@@ -493,6 +493,19 @@ public class TrelloImpl implements Trello {
 		}, doPost(url, keyValueMap));
 	}
 
+	@Override
+	public void  closeCard(String idCard) {
+		validateObjectId(idCard);
+
+		// Trello wants arguments in url even if its a PUT method? Really?
+		final String url = TrelloURL.create(apiKey, TrelloURL.CARD_CLOSED_URL, idCard).token(token).build() + "&value=true";
+
+		Map<String, String> keyValueMap = new HashMap<String, String>();
+
+		trelloObjFactory.createObject(new TypeToken<Card>() {
+		}, doPut(url, keyValueMap));
+	}
+
 	/*
 	 * (non-Javadoc)
 	 *
@@ -1128,6 +1141,10 @@ public class TrelloImpl implements Trello {
 		return doRequest(url, METHOD_PUT);
 	}
 
+	private InputStream doPut(String url, Map<String, String> map) {
+		return doRequest(url, METHOD_PUT, map);
+	}
+
 	private InputStream doPost(String url, Map<String, String> map) {
 		return doRequest(url, METHOD_POST, map);
 	}
@@ -1150,6 +1167,9 @@ public class TrelloImpl implements Trello {
 		try {
 			HttpsURLConnection conn = (HttpsURLConnection) new URL(url)
 					.openConnection();
+
+			System.out.println("REQUEST >>> " + requestMethod + " : "  + url);
+
 			conn.setRequestProperty("Accept-Encoding", "gzip, deflate");
             conn.setDoOutput(requestMethod.equals(METHOD_POST) || requestMethod.equals(METHOD_PUT));
             conn.setRequestMethod(requestMethod);
@@ -1165,6 +1185,8 @@ public class TrelloImpl implements Trello {
                 conn.getOutputStream().write(sb.toString().getBytes());
                 conn.getOutputStream().close();
             }
+
+			System.out.println("RESPONSE <<< " + conn.getResponseCode());
 
 			if (conn.getResponseCode() > 399) {
 				return null;

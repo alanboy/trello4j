@@ -22,6 +22,8 @@ public interface CardService {
 
 	List<Action> getActionsByCard(String cardId);
 
+    void closeCard(String idCard);
+
 	List<Attachment> getAttachmentsByCard(String cardId);
 
 	Board getBoardByCard(String cardId, String... filter);
