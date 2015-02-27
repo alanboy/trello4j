@@ -22,7 +22,9 @@ public interface CardService {
 
 	List<Action> getActionsByCard(String cardId);
 
-    void closeCard(String idCard);
+	void closeCard(String idCard);
+
+	void moveCard(String idCard, String idList);
 
 	List<Attachment> getAttachmentsByCard(String cardId);
 

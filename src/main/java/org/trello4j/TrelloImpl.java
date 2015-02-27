@@ -485,12 +485,26 @@ public class TrelloImpl implements Trello {
 				.token(token)
 				.build();
 		if (keyValueMap == null) keyValueMap = new HashMap<String, String>();
-		//if (keyValueMap.containsKey("name")) keyValueMap.remove("name");
 		keyValueMap.put("name", name);
 		keyValueMap.put("idList", idList);
 
 		return trelloObjFactory.createObject(new TypeToken<Card>() {
-		}, doPost(url, keyValueMap));
+			}, doPost(url, keyValueMap));
+	}
+
+	@Override
+	public void moveCard(String idCard, String idList) {
+		validateObjectId(idList);
+
+		final String url = TrelloURL
+				.create(apiKey, TrelloURL.CARD_PUT_URL, idCard)
+				.token(token)
+				.build() + "&idList=" + idList;
+
+		Map<String, String> keyValueMap = new HashMap<String, String>();
+
+		trelloObjFactory.createObject(new TypeToken<Card>() {
+			}, doPut(url, keyValueMap));
 	}
 
 	@Override
@@ -498,12 +512,13 @@ public class TrelloImpl implements Trello {
 		validateObjectId(idCard);
 
 		// Trello wants arguments in url even if its a PUT method? Really?
-		final String url = TrelloURL.create(apiKey, TrelloURL.CARD_CLOSED_URL, idCard).token(token).build() + "&value=true";
+		final String url = TrelloURL.create(apiKey, TrelloURL.CARD_CLOSED_URL, idCard)
+				.token(token).build() + "&value=true";
 
 		Map<String, String> keyValueMap = new HashMap<String, String>();
 
 		trelloObjFactory.createObject(new TypeToken<Card>() {
-		}, doPut(url, keyValueMap));
+			}, doPut(url, keyValueMap));
 	}
 
 	/*
