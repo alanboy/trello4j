@@ -507,6 +507,21 @@ public class TrelloImpl implements Trello {
 			}, doPut(url, keyValueMap));
 	}
 
+    @Override
+	public void moveToTop(String idCard) {
+		//validateObjectId(idList);
+
+		final String url = TrelloURL
+				.create(apiKey, TrelloURL.CARD_POS_URL, idCard)
+				.token(token)
+				.build()+ "&value=top";;
+
+		Map<String, String> keyValueMap = new HashMap<String, String>();
+
+		trelloObjFactory.createObject(new TypeToken<Card>() {
+			}, doPut(url, keyValueMap));
+	}
+
 	@Override
 	public void  closeCard(String idCard) {
 		validateObjectId(idCard);

@@ -26,6 +26,8 @@ public interface CardService {
 
 	void moveCard(String idCard, String idList);
 
+	void moveToTop(String idCard);
+
 	List<Attachment> getAttachmentsByCard(String cardId);
 
 	Board getBoardByCard(String cardId, String... filter);
