@@ -28,6 +28,8 @@ public interface CardService {
 
 	void moveToTop(String idCard);
 
+	void moveToPos(String idCard, double position);
+
 	List<Attachment> getAttachmentsByCard(String cardId);
 
 	Board getBoardByCard(String cardId, String... filter);

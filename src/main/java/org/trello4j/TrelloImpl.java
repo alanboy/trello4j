@@ -22,16 +22,15 @@ import java.util.zip.GZIPInputStream;
  */
 public class TrelloImpl implements Trello {
 
-    private static final String METHOD_DELETE   = "DELETE";
-    private static final String METHOD_GET      = "GET";
-    private static final String METHOD_POST     = "POST";
-    private static final String METHOD_PUT      = "PUT";
+	private static final String METHOD_DELETE   = "DELETE";
+	private static final String METHOD_GET      = "GET";
+	private static final String METHOD_POST     = "POST";
+	private static final String METHOD_PUT      = "PUT";
 	private static final String GZIP_ENCODING   = "gzip";
 
 	private String apiKey = null;
 	private String token = null;
 	private TrelloObjectFactoryImpl trelloObjFactory = new TrelloObjectFactoryImpl();
-
 
 	public TrelloImpl(String apiKey) {
 		this(apiKey, null);
@@ -49,7 +48,7 @@ public class TrelloImpl implements Trello {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.trello4j.BoardService#getBoard(java.lang.String)
 	 */
 	@Override
@@ -67,7 +66,7 @@ public class TrelloImpl implements Trello {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.trello4j.BoardService#getActionsByBoard(java.lang.String,
 	 * java.lang.String[])
 	 */
@@ -88,7 +87,7 @@ public class TrelloImpl implements Trello {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.trello4j.BoardService#getCardsByBoard(java.lang.String)
 	 */
 	@Override
@@ -106,7 +105,7 @@ public class TrelloImpl implements Trello {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.trello4j.BoardService#getChecklistByBoard(java.lang.String)
 	 */
 	@Override
@@ -123,7 +122,7 @@ public class TrelloImpl implements Trello {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.trello4j.BoardService#getListByBoard(java.lang.String)
 	 */
 	@Override
@@ -144,7 +143,7 @@ public class TrelloImpl implements Trello {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.trello4j.BoardService#getMembersByBoard(java.lang.String)
 	 */
 	@Override
@@ -163,7 +162,7 @@ public class TrelloImpl implements Trello {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.trello4j.BoardService#getMembersInvitedByBoard(java.lang.String)
 	 */
 	@Override
@@ -182,7 +181,7 @@ public class TrelloImpl implements Trello {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.trello4j.BoardService#getPrefsByBoard(java.lang.String)
 	 */
 	@Override
@@ -199,7 +198,7 @@ public class TrelloImpl implements Trello {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.trello4j.BoardService#getOrganizationByBoard(java.lang.String)
 	 */
 	@Override
@@ -218,7 +217,7 @@ public class TrelloImpl implements Trello {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.trello4j.ActionService#getAction(java.lang.String)
 	 */
 	@Override
@@ -237,7 +236,7 @@ public class TrelloImpl implements Trello {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.trello4j.OrganizationService#getOrganization(java.lang.String)
 	 */
 	@Override
@@ -254,7 +253,7 @@ public class TrelloImpl implements Trello {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.trello4j.MemberService#getMember(java.lang.String)
 	 */
 	@Override
@@ -270,7 +269,7 @@ public class TrelloImpl implements Trello {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.trello4j.MemberService#getBoardsByMember(java.lang.String)
 	 */
 	@Override
@@ -287,7 +286,7 @@ public class TrelloImpl implements Trello {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.trello4j.OrganizationService#getBoardsByOrganization(java.lang.String
 	 * )
@@ -309,7 +308,7 @@ public class TrelloImpl implements Trello {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.trello4j.OrganizationService#getActionsByOrganization(java.lang.String
 	 * )
@@ -329,7 +328,7 @@ public class TrelloImpl implements Trello {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.trello4j.CardService#getCard(java.lang.String)
 	 */
 	@Override
@@ -347,7 +346,7 @@ public class TrelloImpl implements Trello {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.trello4j.CardService#getActionsByCard(java.lang.String)
 	 */
 	@Override
@@ -365,7 +364,7 @@ public class TrelloImpl implements Trello {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.trello4j.CardService#getAttachmentsByCard(java.lang.String)
 	 */
 	@Override
@@ -383,7 +382,7 @@ public class TrelloImpl implements Trello {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.trello4j.CardService#getBoardByCard(java.lang.String)
 	 */
 	@Override
@@ -402,7 +401,7 @@ public class TrelloImpl implements Trello {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.trello4j.CardService#getCheckItemStatesByCard(java.lang.String)
 	 */
 	@Override
@@ -420,7 +419,7 @@ public class TrelloImpl implements Trello {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.trello4j.CardService#getChecklistByCard(java.lang.String)
 	 */
 	@Override
@@ -438,7 +437,7 @@ public class TrelloImpl implements Trello {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.trello4j.CardService#getListByCard(java.lang.String)
 	 */
 	@Override
@@ -460,7 +459,7 @@ public class TrelloImpl implements Trello {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.trello4j.CardService#getMembersByCard(java.lang.String)
 	 */
 	@Override
@@ -509,12 +508,25 @@ public class TrelloImpl implements Trello {
 
     @Override
 	public void moveToTop(String idCard) {
-		//validateObjectId(idList);
 
 		final String url = TrelloURL
 				.create(apiKey, TrelloURL.CARD_POS_URL, idCard)
 				.token(token)
-				.build()+ "&value=top";;
+				.build()+ "&value=top";
+
+		Map<String, String> keyValueMap = new HashMap<String, String>();
+
+		trelloObjFactory.createObject(new TypeToken<Card>() {
+			}, doPut(url, keyValueMap));
+	}
+
+    @Override
+	public void moveToPos(String idCard, double position) {
+
+		final String url = TrelloURL
+				.create(apiKey, TrelloURL.CARD_POS_URL, idCard)
+				.token(token)
+				.build()+ "&value=" + String.valueOf(position);
 
 		Map<String, String> keyValueMap = new HashMap<String, String>();
 
@@ -558,7 +570,7 @@ public class TrelloImpl implements Trello {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.trello4j.NotificationService#getNotification(java.lang.String)
 	 */
 	@Override
@@ -578,7 +590,7 @@ public class TrelloImpl implements Trello {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.trello4j.ChecklistService#getChecklist(java.lang.String)
 	 */
 	@Override
@@ -597,7 +609,7 @@ public class TrelloImpl implements Trello {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.trello4j.Trello#getType(java.lang.String)
 	 */
 	@Override
@@ -613,7 +625,7 @@ public class TrelloImpl implements Trello {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.trello4j.ActionService#getBoardByAction(java.lang.String)
 	 */
 	@Override
@@ -632,7 +644,7 @@ public class TrelloImpl implements Trello {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.trello4j.ActionService#getCardByAction(java.lang.String)
 	 */
 	@Override
@@ -651,7 +663,7 @@ public class TrelloImpl implements Trello {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.trello4j.ActionService#getMemberByAction(java.lang.String)
 	 */
 	@Override
@@ -670,7 +682,7 @@ public class TrelloImpl implements Trello {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.trello4j.ActionService#getListByAction(java.lang.String)
 	 */
 	@Override
@@ -692,7 +704,7 @@ public class TrelloImpl implements Trello {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.trello4j.ActionService#getMemberCreatorByAction(java.lang.String)
 	 */
@@ -713,7 +725,7 @@ public class TrelloImpl implements Trello {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.trello4j.ActionService#getOrganizationByAction(java.lang.String)
 	 */
 	@Override
@@ -733,7 +745,7 @@ public class TrelloImpl implements Trello {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.trello4j.OrganizationService#getMembersByOrganization(java.lang.String
 	 * )
@@ -757,7 +769,7 @@ public class TrelloImpl implements Trello {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.trello4j.NotificationService#getBoardByNotification(java.lang.String)
 	 */
@@ -781,7 +793,7 @@ public class TrelloImpl implements Trello {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.trello4j.NotificationService#getCardByNotification(java.lang.String)
 	 */
@@ -805,7 +817,7 @@ public class TrelloImpl implements Trello {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.trello4j.NotificationService#getListByNotification(java.lang.String)
 	 */
@@ -828,7 +840,7 @@ public class TrelloImpl implements Trello {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.trello4j.NotificationService#getMemberByNotification(java.lang.String
 	 * )
@@ -853,7 +865,7 @@ public class TrelloImpl implements Trello {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.trello4j.NotificationService#getMemberCreatorByNotification(java.
 	 * lang.String)
@@ -878,7 +890,7 @@ public class TrelloImpl implements Trello {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.trello4j.NotificationService#getOrganizationCreatorByNotification
 	 * (java.lang.String)
@@ -903,7 +915,7 @@ public class TrelloImpl implements Trello {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.trello4j.ListService#getActionsByList(java.lang.String)
 	 */
 	@Override
@@ -921,7 +933,7 @@ public class TrelloImpl implements Trello {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.trello4j.ListService#getBoardByList(java.lang.String)
 	 */
 	@Override
@@ -940,7 +952,7 @@ public class TrelloImpl implements Trello {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.trello4j.ListService#getCardsByList(java.lang.String)
 	 */
 	@Override
@@ -959,7 +971,7 @@ public class TrelloImpl implements Trello {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.trello4j.MemberService#getActionsByMember(java.lang.String)
 	 */
 	@Override
@@ -976,7 +988,7 @@ public class TrelloImpl implements Trello {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.trello4j.MemberService#getCardsByMember(java.lang.String)
 	 */
 	@Override
@@ -995,7 +1007,7 @@ public class TrelloImpl implements Trello {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.trello4j.MemberService#getNotificationsByMember(java.lang.String)
 	 */
@@ -1020,7 +1032,7 @@ public class TrelloImpl implements Trello {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.trello4j.MemberService#getOrganizationsByMember(java.lang.String)
 	 */
@@ -1042,7 +1054,7 @@ public class TrelloImpl implements Trello {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.trello4j.MemberService#getOrganizationsInvitedByMember(java.lang.
 	 * String)
@@ -1068,7 +1080,7 @@ public class TrelloImpl implements Trello {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.trello4j.ChecklistService#getBoardByChecklist(java.lang.String)
 	 */
 	@Override
@@ -1088,7 +1100,7 @@ public class TrelloImpl implements Trello {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.trello4j.ChecklistService#getCheckItemsByChecklist(java.lang.String)
 	 */
@@ -1107,7 +1119,7 @@ public class TrelloImpl implements Trello {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.trello4j.ChecklistService#getCardByChecklist(java.lang.String)
 	 */
 	@Override
@@ -1127,7 +1139,7 @@ public class TrelloImpl implements Trello {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.trello4j.TokenService#getToken(java.lang.String)
 	 */
 	@Override
@@ -1146,7 +1158,7 @@ public class TrelloImpl implements Trello {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.trello4j.TokenService#getMemberByToken(java.lang.String)
 	 */
 	@Override
@@ -1198,25 +1210,21 @@ public class TrelloImpl implements Trello {
 			HttpsURLConnection conn = (HttpsURLConnection) new URL(url)
 					.openConnection();
 
-			System.out.println("REQUEST >>> " + requestMethod + " : "  + url);
-
 			conn.setRequestProperty("Accept-Encoding", "gzip, deflate");
-            conn.setDoOutput(requestMethod.equals(METHOD_POST) || requestMethod.equals(METHOD_PUT));
-            conn.setRequestMethod(requestMethod);
+			conn.setDoOutput(requestMethod.equals(METHOD_POST) || requestMethod.equals(METHOD_PUT));
+			conn.setRequestMethod(requestMethod);
 
-            if(map != null && !map.isEmpty()) {
-                StringBuilder sb = new StringBuilder();
-                for (String key : map.keySet()) {
-                    sb.append(sb.length() > 0 ? "&" : "")
-                        .append(key)
-                        .append("=")
-                        .append(URLEncoder.encode(map.get(key), "UTF-8"));
-                }
-                conn.getOutputStream().write(sb.toString().getBytes());
-                conn.getOutputStream().close();
-            }
-
-			System.out.println("RESPONSE <<< " + conn.getResponseCode());
+			if(map != null && !map.isEmpty()) {
+				StringBuilder sb = new StringBuilder();
+				for (String key : map.keySet()) {
+					sb.append(sb.length() > 0 ? "&" : "")
+						.append(key)
+						.append("=")
+						.append(URLEncoder.encode(map.get(key), "UTF-8"));
+				}
+				conn.getOutputStream().write(sb.toString().getBytes());
+				conn.getOutputStream().close();
+			}
 
 			if (conn.getResponseCode() > 399) {
 				return null;
@@ -1246,7 +1254,7 @@ public class TrelloImpl implements Trello {
 		 * method is not suitable for streaming purposes. To fix this, create a
 		 * subclass of GZIPInputStream() which overrides the available()
 		 * method."
-		 * 
+		 *
 		 * https://dev.twitter.com/docs/streaming-api/concepts#gzip-compression
 		 */
 		if (gzip) {
