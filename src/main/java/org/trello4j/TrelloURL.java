@@ -34,6 +34,7 @@ public class TrelloURL {
 	public static final String BOARD_ORGANIZAION_URL = "https://api.trello.com/1/boards/{0}/organization";
 	public static final String BOARD_CLOSED_URL = "https://api.trello.com/1/boards/{0}/closed";
 	public static final String CARD_PUT_URL =    "https://api.trello.com/1/cards/{0}/";
+	public static final String CARD_POST_COMMENT_URL = "https://api.trello.com/1/cards/{0}/actions/comments";
 	public static final String CARD_CLOSED_URL = "https://api.trello.com/1/cards/{0}/closed";
 	public static final String CARD_ACTION_URL = "https://api.trello.com/1/cards/{0}/actions";
 	public static final String CARD_ATTACHEMENT_URL = "https://api.trello.com/1/cards/{0}/attachments";

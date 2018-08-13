@@ -521,6 +521,22 @@ public class TrelloImpl implements Trello {
 	}
 
     @Override
+	public void addCommentToCard(String idCard, String text) {
+
+		final String url = TrelloURL
+				.create(apiKey, TrelloURL.CARD_POST_COMMENT_URL, idCard)
+				.token(token)
+				.build();
+
+		Map<String, String> keyValueMap = new HashMap<String, String>();
+
+		keyValueMap.put("text", text);
+
+		trelloObjFactory.createObject(new TypeToken<Card>() {
+			}, doPost(url, keyValueMap));
+	}
+
+    @Override
 	public void moveToPos(String idCard, double position) {
 
 		final String url = TrelloURL

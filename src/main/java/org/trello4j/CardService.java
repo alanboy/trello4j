@@ -22,6 +22,8 @@ public interface CardService {
 
 	List<Action> getActionsByCard(String cardId);
 
+	void addCommentToCard(String idCard, String text);
+
 	void closeCard(String idCard);
 
 	void moveCard(String idCard, String idList);
