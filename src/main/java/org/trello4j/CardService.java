@@ -32,6 +32,8 @@ public interface CardService {
 
 	void moveToPos(String idCard, double position);
 
+	void renameCard(String idCard, String name);
+
 	List<Attachment> getAttachmentsByCard(String cardId);
 
 	Board getBoardByCard(String cardId, String... filter);

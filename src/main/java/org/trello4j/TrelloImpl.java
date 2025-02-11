@@ -521,6 +521,22 @@ public class TrelloImpl implements Trello {
 	}
 
     @Override
+	public void renameCard(String cardId, String name) {
+		validateObjectId(cardId);
+
+		final String url = TrelloURL
+				.create(apiKey, TrelloURL.CARD_URL, cardId)
+				.token(token)
+				.build();
+
+		Map<String, String> keyValueMap = new HashMap<String, String>();
+		keyValueMap.put("name", name);
+
+		trelloObjFactory.createObject(new TypeToken<Card>() {
+			}, doPut(url, keyValueMap));
+	}
+
+    @Override
 	public void addCommentToCard(String idCard, String text) {
 
 		final String url = TrelloURL
@@ -529,7 +545,6 @@ public class TrelloImpl implements Trello {
 				.build();
 
 		Map<String, String> keyValueMap = new HashMap<String, String>();
-
 		keyValueMap.put("text", text);
 
 		trelloObjFactory.createObject(new TypeToken<Card>() {
@@ -1231,6 +1246,7 @@ public class TrelloImpl implements Trello {
 			conn.setRequestMethod(requestMethod);
 
 			if(map != null && !map.isEmpty()) {
+				conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
 				StringBuilder sb = new StringBuilder();
 				for (String key : map.keySet()) {
 					sb.append(sb.length() > 0 ? "&" : "")
